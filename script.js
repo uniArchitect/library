@@ -17,3 +17,5 @@ book.prototype.addBookToLibrary = function(addedBook) {
     myLibrary = [addedBook];
     console.log(myLibrary);
 }
+
+const SUBMIT_BUTTON = document.querySelector('[book-submit]')

@@ -14,6 +14,6 @@ let newBook1 = new book('LotR','Tolkien', '1000', 'Yes')
 // addedBook is what will get pushed into myLibrary
 
 book.prototype.addBookToLibrary = function(addedBook) {
-    myLibrary.push(addedBook);
+    myLibrary = [addedBook];
     console.log(myLibrary);
 }

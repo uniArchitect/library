@@ -26,6 +26,9 @@ book.prototype.addBookToLibrary = function(addedBook) {
     console.log(myLibrary);
 }
 
+// Create a function that will take the global scope variables in the constructor and define a new variable with all the variables
+// Use the prototype to help??
+
 // SUBMIT_BUTTON.addEventListener('click', () => {
 
 // })

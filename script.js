@@ -7,10 +7,13 @@ function book(name, author, pages, hasRead) {
     this.hasRead = hasRead;
 }
 
-// myLibrary will not be redeclared. Figure out why. 
+// Defined a variable for a created new book
 
-book.prototype.dataEntry = function() {
-    let myLibrary = [];
-    myLibrary.push(this.name, this.author, this.pages, this.hasRead);
+let newBook1 = new book('LotR','Tolkien', '1000', 'Yes')
+
+// addedBook is what will get pushed into myLibrary
+
+book.prototype.addBookToLibrary = function(addedBook) {
+    myLibrary.push(addedBook);
     console.log(myLibrary);
 }

@@ -73,8 +73,7 @@ document.querySelector('.sign-up-field').addEventListener('submit', (e) => {
 
     const book = new Book(name, author, pages, hasRead);
 
-    console.log(book);
-    return myLibrary;
+    UI.addBookToLibrary(book);
 })
 // Event: Remove a Book
 

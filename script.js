@@ -1,3 +1,23 @@
+// Book Class
+class Book {
+    constructor(name, author, pages, hasRead) {
+        this.name = name;
+        this.author = author;
+        this.pages = pages;
+        this.hasRead = hasRead;
+        this.info = function() {
+            return this.name + ', ' + this.author + ', ' + this.pages + ', Has read? ' + this.hasRead;
+        }
+    }
+
+    addBookToLibrary() {
+        let newBook = new Book(NAME_INPUT.value, AUTHOR_INPUT.value, PAGE_INPUT.value, READ_INPUT.value);
+        myLibrary = [newBook];
+        console.log(newBook.info());
+        return myLibrary;
+    }
+}
+
 // GLOBAL SCOPE
 
 // '#' is the id selector
@@ -9,20 +29,10 @@ const READ_INPUT = document.querySelector('#read-status')
 const SUBMIT_BUTTON = document.querySelector('#book-submit')
 let myLibrary = [];
 
-// Book Constructor
-function Book(name, author, pages, hasRead) {
-    this.name = name;
-    this.author = author;
-    this.pages = pages;
-    this.hasRead = hasRead;
-    this.info = function() {
-        return this.name + ', ' + this.author + ', ' + this.pages + ', ' + this.hasRead;
-    }
-}
+const book = new Book(NAME_INPUT.value, AUTHOR_INPUT.value, PAGE_INPUT.value, READ_INPUT.value)
 
 // Defined a variable for a created new book
-const testBook = new Book('NAME_INPUT', 'AUTHOR_INPUT', 'PAGE_INPUT', 'READ_INPUT')
-// const newBook = new Book(NAME_INPUT.value, AUTHOR_INPUT.value, PAGE_INPUT.value, READ_INPUT.value)
+// const testBook = new Book('NAME_INPUT', 'AUTHOR_INPUT', 'PAGE_INPUT', 'READ_INPUT')
 
 // addedBook is what will get pushed into myLibrary
 // Book.prototype.addBookToLibrary = function(newBook) {
@@ -30,13 +40,7 @@ const testBook = new Book('NAME_INPUT', 'AUTHOR_INPUT', 'PAGE_INPUT', 'READ_INPU
 //     console.log(myLibrary);
 // }
 
-function addBookToLibrary() {
-    let newBook = new Book(NAME_INPUT.value, AUTHOR_INPUT.value, PAGE_INPUT.value, READ_INPUT.value);
-    myLibrary = [newBook];
-    console.log(newBook.info());
-    return myLibrary;
-}
-
 SUBMIT_BUTTON.addEventListener('click', () => {
-    addBookToLibrary();
+    // const testBook = new Book('NAME_INPUT', 'AUTHOR_INPUT', 'PAGE_INPUT', 'READ_INPUT')
+    book.addBookToLibrary();
 })

@@ -9,6 +9,7 @@ const READ_INPUT = document.querySelector('#read-status')
 const SUBMIT_BUTTON = document.querySelector('#book-submit')
 let myLibrary = [];
 
+// Book Constructor
 function Book(name, author, pages, hasRead) {
     this.name = name;
     this.author = author;
@@ -20,19 +21,22 @@ function Book(name, author, pages, hasRead) {
 }
 
 // Defined a variable for a created new book
-
-const newBook = new Book('NAME_INPUT', 'AUTHOR_INPUT', 'PAGE_INPUT', 'READ_INPUT')
+const testBook = new Book('NAME_INPUT', 'AUTHOR_INPUT', 'PAGE_INPUT', 'READ_INPUT')
+// const newBook = new Book(NAME_INPUT.value, AUTHOR_INPUT.value, PAGE_INPUT.value, READ_INPUT.value)
 
 // addedBook is what will get pushed into myLibrary
+// Book.prototype.addBookToLibrary = function(newBook) {
+//     myLibrary = [newBook];
+//     console.log(myLibrary);
+// }
 
-Book.prototype.addBookToLibrary = function(newBook) {
+function addBookToLibrary() {
+    let newBook = new Book(NAME_INPUT.value, AUTHOR_INPUT.value, PAGE_INPUT.value, READ_INPUT.value);
     myLibrary = [newBook];
-    console.log(myLibrary);
+    console.log(newBook.info());
+    return myLibrary;
 }
 
-// Create a function that will take the global scope variables in the constructor and define a new variable with all the variables
-// Use the prototype to help??
-
 SUBMIT_BUTTON.addEventListener('click', () => {
-    Book.addBookToLibrary(newBook);
+    addBookToLibrary();
 })

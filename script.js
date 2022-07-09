@@ -41,6 +41,7 @@ const book = new Book(NAME_INPUT.value, AUTHOR_INPUT.value, PAGE_INPUT.value, RE
 // }
 
 SUBMIT_BUTTON.addEventListener('click', () => {
-    // const testBook = new Book('NAME_INPUT', 'AUTHOR_INPUT', 'PAGE_INPUT', 'READ_INPUT')
     book.addBookToLibrary();
 })
+
+// Create a new class to receive stored books after they have been input by the user

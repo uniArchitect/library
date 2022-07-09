@@ -36,10 +36,10 @@ class UI {
 
         // For each book called, run the addBookToList method to add it to the page
         // 'book' may need to be 'Book' based on what I've already created
-        books.forEach((Book) => UI.addBookToList(Book));
+        books.forEach((Book) => UI.addBookToLibrary(Book));
     }
 
-    static addBookToList(Book) {
+    static addBookToLibrary(Book) {
         const list = document.querySelector('.library-background');
 
         const bookCard = document.createElement('div');
@@ -73,7 +73,7 @@ document.querySelector('.sign-up-field').addEventListener('submit', (e) => {
 
     const book = new Book(name, author, pages, hasRead);
 
-    console.log(book.info());
+    console.log(book);
     return myLibrary;
 })
 // Event: Remove a Book
@@ -82,11 +82,6 @@ document.querySelector('.sign-up-field').addEventListener('submit', (e) => {
 
 // '#' is the id selector
 // '.' is the class selector
-const NAME_INPUT = document.querySelector('#name');
-const AUTHOR_INPUT = document.querySelector('#author')
-const PAGE_INPUT = document.querySelector('#page-count')
-const READ_INPUT = document.querySelector('#read-status')
-const SUBMIT_BUTTON = document.querySelector('#book-submit')
 let myLibrary = [];
 
 // const book = new Book(NAME_INPUT.value, AUTHOR_INPUT.value, PAGE_INPUT.value, READ_INPUT.value)

@@ -82,12 +82,7 @@ document.querySelector('.sign-up-field').addEventListener('submit', (e) => {
 
 // '#' is the id selector
 // '.' is the class selector
-let myLibrary = [];
-
-// const book = new Book(NAME_INPUT.value, AUTHOR_INPUT.value, PAGE_INPUT.value, READ_INPUT.value)
-
-// Defined a variable for a created new book
-// const testBook = new Book('NAME_INPUT', 'AUTHOR_INPUT', 'PAGE_INPUT', 'READ_INPUT')
+// let myLibrary = [];
 
 // addedBook is what will get pushed into myLibrary
 // Book.prototype.addBookToLibrary = function(newBook) {

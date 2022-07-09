@@ -1,4 +1,5 @@
-// Book Class
+// Book Class - Handles creating new book objects
+// Instantiate - New instance of an object
 class Book {
     constructor(name, author, pages, hasRead) {
         this.name = name;
@@ -17,6 +18,46 @@ class Book {
         return myLibrary;
     }
 }
+
+// UI Class - Handles creating new UI for adding books to the library
+class UI {
+    static displayBooks() {
+        const StoredBooks = [
+            {
+                // A ':' delimits properties of the book
+                name: 'Lord of the Rings',
+                author: 'JRR Tolkien',
+                pages: '1178', 
+                hasRead: 'No',
+            },
+            {
+                name: 'The House of the Scorpion',
+                author: 'Nancy Farmer',
+                pages: '380', 
+                hasRead: 'Yes',
+            }
+        ];
+
+        // Setting books to the array 'StoredBooks'
+        const books = StoredBooks;
+
+        // For each book called, run the addBookToList method to add it to the page
+        // 'book' may need to be 'Book' based on what I've already created
+        books.forEach((book) => UI.addBookToList(book));
+    }
+
+    static addBookToList(book) {
+
+    }
+}
+
+// Store Class - Handles storage (Important for later)
+
+// Event: Display Books
+
+// Event: Add a Book
+
+// Event: Remove a Book
 
 // GLOBAL SCOPE
 

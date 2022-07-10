@@ -72,6 +72,15 @@ class UI {
         document.querySelector('#page-count').value = '';
         document.querySelector('#read-status').value = '';
     }
+
+    static changeBookStatus() {
+        if (bookStatus.innerHTML == 'Not Read') {
+            document.querySelector('.book-status').value = 'Has Read';
+        } else if (bookStatus.innerHTML == 'Has Read') {
+            document.querySelector('.book-status').value = 'Not Read';
+        }
+    }
+
 }
 
 // Store Class - Handles storage (Important for later)
@@ -100,22 +109,24 @@ document.querySelector('.sign-up-field').addEventListener('submit', (e) => {
 })
 // Event: Remove a Book
 
+// Event: Change Book Status
+document.querySelector('.book-status').addEventListener('click', () => {
+    UI.changeBookStatus();
+})
+
+// Cleaned code, but why is null showing for .addEventListener for book status button?
+
 // GLOBAL SCOPE
 
 // '#' is the id selector
 // '.' is the class selector
 // let myLibrary = [];
 
-// addedBook is what will get pushed into myLibrary
-// Book.prototype.addBookToLibrary = function(newBook) {
-//     myLibrary = [newBook];
-//     console.log(myLibrary);
-// }
-
 // Book Menu Sidebar
 const bookMenu = document.querySelector("aside");
 const menuBtn = document.querySelector('#book-menu-open');
 const closeBtn = document.querySelector('#book-menu-close');
+// const bookStatus = document.querySelector('.book-status');
 
 menuBtn.addEventListener('click', () => {
     bookMenu.style.display = 'block';
@@ -126,3 +137,4 @@ closeBtn.addEventListener('click', () => {
     bookMenu.style.display = 'none';
     menuBtn.style.display = 'block';
 })
+

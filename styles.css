@@ -15,9 +15,18 @@ body, html {
         grid-template-rows: 1fr 1fr 1fr;        
     }
 
+        /* Button to add a book to the library */
         #book-menu-open {
             grid-column: 2 / 2;
             grid-row: 1 / 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: none;
+            background-color: gray;
         }
 
         .sign-up-field-background {
@@ -25,6 +34,14 @@ body, html {
             grid-column: 2 / 2;
             grid-row: 2 / 4;
         }
+
+            .sign-up {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+                gap: 10px;
+            }
 
         .library-background {
             height: 100%;

@@ -53,6 +53,13 @@ class UI {
 
         list.appendChild(bookCard);
     }
+
+    static clearFields() {
+        document.querySelector('#name').value = '';
+        document.querySelector('#author').value = '';
+        document.querySelector('#page-count').value = '';
+        document.querySelector('#read-status').value = '';
+    }
 }
 
 // Store Class - Handles storage (Important for later)
@@ -73,7 +80,11 @@ document.querySelector('.sign-up-field').addEventListener('submit', (e) => {
 
     const book = new Book(name, author, pages, hasRead);
 
+    // Add the book to our library
     UI.addBookToLibrary(book);
+
+    // Clears the form when submitting a book to library
+    UI.clearFields();
 })
 // Event: Remove a Book
 

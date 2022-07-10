@@ -21,13 +21,13 @@ class UI {
                 name: 'Lord of the Rings',
                 author: 'JRR Tolkien',
                 pages: '1178', 
-                hasRead: 'No',
+                hasRead: 'Not Read',
             },
             {
                 name: 'The House of the Scorpion',
                 author: 'Nancy Farmer',
                 pages: '380', 
-                hasRead: 'Yes',
+                hasRead: 'Has Read',
             }
         ];
 
@@ -44,18 +44,26 @@ class UI {
 
         // Create div element for book-card
         const bookCard = document.createElement('div');
+        const bookStatus = document.createElement('button')
 
         // Add class book-card to created div element
         bookCard.classList.add('book-card');
+        bookStatus.classList.add('book-status');
 
+        // Should be a button that toggles off between 'Has Read' and 'Not Read'
         bookCard.innerHTML = `
         <p>Title: ${Book.name}</p>
         <p>Author: ${Book.author}</p>
         <p>Page Count: ${Book.pages}</p>
-        <p>Has Read? ${Book.hasRead}</p>
         `;
 
+        bookStatus.innerHTML = `
+        ${Book.hasRead}
+        `
+
         list.appendChild(bookCard);
+        // Added button status for 'Has Read' and 'Not Read' on book card
+        bookCard.appendChild(bookStatus);
     }
 
     static clearFields() {
@@ -111,8 +119,10 @@ const closeBtn = document.querySelector('#book-menu-close');
 
 menuBtn.addEventListener('click', () => {
     bookMenu.style.display = 'block';
+    menuBtn.style.display = 'none';
 })
 
 closeBtn.addEventListener('click', () => {
     bookMenu.style.display = 'none';
+    menuBtn.style.display = 'block';
 })

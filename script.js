@@ -73,13 +73,14 @@ class UI {
         document.querySelector('#read-status').value = '';
     }
 
-    static changeBookStatus() {
-        if (bookStatus.innerHTML == 'Not Read') {
-            document.querySelector('.book-status').value = 'Has Read';
-        } else if (bookStatus.innerHTML == 'Has Read') {
-            document.querySelector('.book-status').value = 'Not Read';
-        }
-    }
+    // Function needs to be edited to read bookStatus properly
+    // static changeBookStatus() {
+    //     if (bookStatus.innerHTML == 'Not Read') {
+    //         bookStatus.innerHTML == 'Has Read';
+    //     } else if (bookStatus.innerHTML == 'Has Read') {
+    //         bookStatus.innerHTML == 'Not Read';
+    //     }
+    // }
 
 }
 
@@ -109,11 +110,6 @@ document.querySelector('.sign-up-field').addEventListener('submit', (e) => {
 })
 // Event: Remove a Book
 
-// Event: Change Book Status
-document.querySelector('.book-status').addEventListener('click', () => {
-    UI.changeBookStatus();
-})
-
 // Cleaned code, but why is null showing for .addEventListener for book status button?
 
 // GLOBAL SCOPE
@@ -126,7 +122,8 @@ document.querySelector('.book-status').addEventListener('click', () => {
 const bookMenu = document.querySelector("aside");
 const menuBtn = document.querySelector('#book-menu-open');
 const closeBtn = document.querySelector('#book-menu-close');
-// const bookStatus = document.querySelector('.book-status');
+// readStatus needs to link to book-status buttons properly
+const readStatus = document.querySelectorAll(".book-status");
 
 menuBtn.addEventListener('click', () => {
     bookMenu.style.display = 'block';
@@ -138,3 +135,7 @@ closeBtn.addEventListener('click', () => {
     menuBtn.style.display = 'block';
 })
 
+// Event: Change Book Status
+// bookStatus.addEventListener('click', () => {
+//     UI.changeBookStatus();
+// })

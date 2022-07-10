@@ -42,7 +42,11 @@ class UI {
     static addBookToLibrary(Book) {
         const list = document.querySelector('.library-background');
 
+        // Create div element for book-card
         const bookCard = document.createElement('div');
+
+        // Add class book-card to created div element
+        bookCard.classList.add('book-card');
 
         bookCard.innerHTML = `
         <p>Title: ${Book.name}</p>

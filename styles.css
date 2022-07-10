@@ -21,6 +21,16 @@ body, html {
         }
 
         .sign-up-field-background {
+            display: none;
             grid-column: 2 / 2;
             grid-row: 2 / 4;
+        }
+
+        .library-background {
+            height: 100%;
+            grid-column: 1 / 4;
+            grid-row: 1 / 4;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
         }

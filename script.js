@@ -103,3 +103,16 @@ document.querySelector('.sign-up-field').addEventListener('submit', (e) => {
 //     myLibrary = [newBook];
 //     console.log(myLibrary);
 // }
+
+// Book Menu Sidebar
+const bookMenu = document.querySelector("aside");
+const menuBtn = document.querySelector('#book-menu-open');
+const closeBtn = document.querySelector('#book-menu-close');
+
+menuBtn.addEventListener('click', () => {
+    bookMenu.style.display = 'block';
+})
+
+closeBtn.addEventListener('click', () => {
+    bookMenu.style.display = 'none';
+})

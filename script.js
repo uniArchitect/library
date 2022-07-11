@@ -85,6 +85,13 @@ class UI {
         document.querySelector("aside").style.display = 'none';
         document.querySelector('#book-menu-open').style.display = 'block';
     }
+
+    // Remove book from library
+    static removeBookfromLibrary(element) {
+        if(element.classList.contains('card-close')) {
+            element.parentElement.remove();
+        }
+    }
 }
 
 // Store Class - Handles storage (Important for later)
@@ -114,7 +121,13 @@ document.querySelector('.sign-up-field').addEventListener('submit', (e) => {
     // Close sign up on submit
     UI.closeForm();
 })
+
 // Event: Remove a Book
+document.querySelector('.container').addEventListener('click', (e) => {
+    // console.log(e.target);
+    // The 'target' is needed here to specifically choose the html element
+    UI.removeBookfromLibrary(e.target);
+})
 
 // Cleaned code, but why is null showing for .addEventListener for book status button?
 

@@ -45,11 +45,13 @@ class UI {
         // Create div element for book-card
         const bookCard = document.createElement('div');
         const bookStatus = document.createElement('button')
+        const cardClose = document.createElement('button')
 
         // Add class book-card to created div element
         bookCard.classList.add('book-card');
         bookStatus.classList.add('book-status');
-
+        cardClose.classList.add('card-close');
+        
         // Should be a button that toggles off between 'Has Read' and 'Not Read'
         bookCard.innerHTML = `
         <p>Name: ${Book.name}</p>
@@ -59,11 +61,16 @@ class UI {
 
         bookStatus.innerHTML = `
         ${Book.hasRead}
-        `
+        `;
+
+        // Close Card Icon
+        cardClose.innerHTML = 'Close';
 
         list.appendChild(bookCard);
         // Added button status for 'Has Read' and 'Not Read' on book card
         bookCard.appendChild(bookStatus);
+        // Added button to delete book card
+        bookCard.appendChild(cardClose);
     }
 
     static clearFields() {

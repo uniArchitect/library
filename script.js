@@ -52,7 +52,7 @@ class UI {
 
         // Should be a button that toggles off between 'Has Read' and 'Not Read'
         bookCard.innerHTML = `
-        <p>Title: ${Book.name}</p>
+        <p>Name: ${Book.name}</p>
         <p>Author: ${Book.author}</p>
         <p>Page Count: ${Book.pages}</p>
         `;
@@ -78,16 +78,6 @@ class UI {
         document.querySelector("aside").style.display = 'none';
         document.querySelector('#book-menu-open').style.display = 'block';
     }
-
-    // Function needs to be edited to read bookStatus properly
-    // static changeBookStatus() {
-    //     if (bookStatus.innerHTML == 'Not Read') {
-    //         bookStatus.innerHTML == 'Has Read';
-    //     } else if (bookStatus.innerHTML == 'Has Read') {
-    //         bookStatus.innerHTML == 'Not Read';
-    //     }
-    // }
-
 }
 
 // Store Class - Handles storage (Important for later)
@@ -131,8 +121,6 @@ document.querySelector('.sign-up-field').addEventListener('submit', (e) => {
 const bookMenu = document.querySelector("aside");
 const menuBtn = document.querySelector('#book-menu-open');
 const closeBtn = document.querySelector('#book-menu-close');
-// readStatus needs to link to book-status buttons properly
-// const readStatus = document.querySelectorAll(".book-status");
 
 menuBtn.addEventListener('click', () => {
     bookMenu.style.display = 'block';

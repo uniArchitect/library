@@ -50,10 +50,15 @@ body, html {
             }
 
             .book-card {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
                 border-radius: 10px;
                 padding: 10px;
                 background-color: gainsboro;
                 text-decoration: none;
+                gap: 5px;
             }
     .container-popup {
         height: 100%;

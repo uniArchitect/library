@@ -117,8 +117,7 @@ class UI {
 const bookMenu = document.querySelector("aside");
 const menuBtn = document.querySelector('#book-menu-open');
 const closeBtn = document.querySelector('#book-menu-close');
-
-// const book = new Book();
+// const readStatus = document.querySelector('.book-status');
 
 // Book Prototype
 // Adding the function changeBookStatus to all Book objects
@@ -178,7 +177,14 @@ document.querySelector('.container').addEventListener('click', (e) => {
 })
 
 // Event: Change Has Read Status
+// Error: When 'container' is clicked the whole content turns into Not Read...
 document.querySelector('.container').addEventListener('click', (e) => {
-    // console.log(e.target);
-    Book.prototype.readStatus(e);
+    let readStatus = e.target;
+    const hasRead = 'Has Read';
+
+    if(readStatus.textContent.toLowerCase().includes(hasRead.toLowerCase())) {
+        readStatus.innerHTML = 'Not Read';
+    } else {
+        readStatus.textContent = hasRead;
+    }
 })

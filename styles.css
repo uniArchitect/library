@@ -18,8 +18,9 @@ body, html {
 
         /* Button to add a book to the library */
         #book-menu-open {
-            grid-column: 3 / 3;
-            grid-row: 1 / 1;
+            position: absolute;
+            top: 2%;
+            right: 5%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -32,17 +33,20 @@ body, html {
 
         .sign-up-field-background {
             display: none;
-            grid-column: 3 / 5;
-            grid-row: 2 / 3;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
         }
 
             .sign-up {
                 list-style: none;
                 display: flex;
                 flex-direction: column;
+                border-radius: 10px;
                 padding: 10px;
                 gap: 10px;
-                background-color: greenyellow;
+                background-color: gainsboro;
             }
 
             .book-card {

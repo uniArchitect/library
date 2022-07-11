@@ -73,6 +73,12 @@ class UI {
         document.querySelector('#read-status').value = '';
     }
 
+    // Close sign up on submit
+    static closeForm() {
+        document.querySelector("aside").style.display = 'none';
+        document.querySelector('#book-menu-open').style.display = 'block';
+    }
+
     // Function needs to be edited to read bookStatus properly
     // static changeBookStatus() {
     //     if (bookStatus.innerHTML == 'Not Read') {
@@ -107,6 +113,9 @@ document.querySelector('.sign-up-field').addEventListener('submit', (e) => {
 
     // Clears the form when submitting a book to library
     UI.clearFields();
+
+    // Close sign up on submit
+    UI.closeForm();
 })
 // Event: Remove a Book
 

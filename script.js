@@ -40,7 +40,7 @@ class UI {
     }
 
     static addBookToLibrary(Book) {
-        const list = document.querySelector('.library-background');
+        const list = document.querySelector('.container');
 
         // Create div element for book-card
         const bookCard = document.createElement('div');
@@ -123,7 +123,7 @@ const bookMenu = document.querySelector("aside");
 const menuBtn = document.querySelector('#book-menu-open');
 const closeBtn = document.querySelector('#book-menu-close');
 // readStatus needs to link to book-status buttons properly
-const readStatus = document.querySelectorAll(".book-status");
+// const readStatus = document.querySelectorAll(".book-status");
 
 menuBtn.addEventListener('click', () => {
     bookMenu.style.display = 'block';

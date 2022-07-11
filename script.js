@@ -74,14 +74,24 @@ class UI {
     }
 
     // Change book status - In progress 220710
-    // static changeBookStatus(element) {
-    //     if(element.innerHTML === 'Has Read') {
-    //         element.remove();
-    //         bookCard.appendChild(bookStatus);            
-    //     }
-    // }
+    static changeBookStatus(element) {
+        if(element.classList.contains('book-status') && (element.innerHTML = 'Has Read')) {
+            element.innerHTML = 'Not Read';
+        } else if (element.classList.contains('book-status') && (element.innerHTML = 'Not Read')) {
+            element.innerHTML = 'Has Read';
+        }
+    }
 
-    
+    // document.querySelector('.container').addEventListener('click', (e) => {
+    //     let readStatus = e.target;
+    //     const hasRead = 'Has Read';
+
+    //     if(readStatus.textContent.toLowerCase().includes(hasRead.toLowerCase())) {
+    //         readStatus.innerHTML = 'Not Read';
+    //     } else {
+    //         readStatus.textContent = hasRead;
+    //     }
+    // })
 
     static clearFields() {
         document.querySelector('#name').value = '';
@@ -117,14 +127,14 @@ class UI {
 const bookMenu = document.querySelector("aside");
 const menuBtn = document.querySelector('#book-menu-open');
 const closeBtn = document.querySelector('#book-menu-close');
-// const readStatus = document.querySelector('.book-status');
+const readStatus = document.querySelector('.book-status');
 
 // Book Prototype
 // Adding the function changeBookStatus to all Book objects
 
-Book.prototype.readStatus = function(element) {
-    console.log(element.target);
-};
+// Book.prototype.readStatus = function(element) {
+//     console.log(element.target);
+// };
 
 // Event: Open up Add Book Menu
 menuBtn.addEventListener('click', () => {
@@ -179,12 +189,17 @@ document.querySelector('.container').addEventListener('click', (e) => {
 // Event: Change Has Read Status
 // Error: When 'container' is clicked the whole content turns into Not Read...
 document.querySelector('.container').addEventListener('click', (e) => {
-    let readStatus = e.target;
-    const hasRead = 'Has Read';
-
-    if(readStatus.textContent.toLowerCase().includes(hasRead.toLowerCase())) {
-        readStatus.innerHTML = 'Not Read';
-    } else {
-        readStatus.textContent = hasRead;
-    }
+    // console.log(e.target);
+    UI.changeBookStatus(e.target);
 })
+
+// document.querySelector('.container').addEventListener('click', (e) => {
+//     let readStatus = e.target;
+//     const hasRead = 'Has Read';
+
+//     if(readStatus.textContent.toLowerCase().includes(hasRead.toLowerCase())) {
+//         readStatus.innerHTML = 'Not Read';
+//     } else {
+//         readStatus.textContent = hasRead;
+//     }
+// })

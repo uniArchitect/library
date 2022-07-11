@@ -73,6 +73,14 @@ class UI {
         bookCard.appendChild(cardClose);
     }
 
+    // Change book status - In progress 220710
+    // static changeBookStatus(element) {
+    //     if(element.innerHTML === 'Has Read') {
+    //         element.remove();
+    //         bookCard.appendChild(bookStatus);            
+    //     }
+    // }
+
     static clearFields() {
         document.querySelector('#name').value = '';
         document.querySelector('#author').value = '';
@@ -95,6 +103,35 @@ class UI {
 }
 
 // Store Class - Handles storage (Important for later)
+
+// Cleaned code, but why is null showing for .addEventListener for book status button?
+
+// GLOBAL SCOPE
+
+// '#' is the id selector
+// '.' is the class selector
+// let myLibrary = [];
+
+const bookMenu = document.querySelector("aside");
+const menuBtn = document.querySelector('#book-menu-open');
+const closeBtn = document.querySelector('#book-menu-close');
+
+// Event: Open up Add Book Menu
+menuBtn.addEventListener('click', () => {
+    bookMenu.style.display = 'block';
+    menuBtn.style.display = 'none';
+})
+
+// Event: Close Add Book Menu
+closeBtn.addEventListener('click', () => {
+    bookMenu.style.display = 'none';
+    menuBtn.style.display = 'block';
+})
+
+// Event: Change Book Status
+// bookStatus.addEventListener('click', () => {
+//     UI.changeBookStatus();
+// })
 
 // Event: Display Books
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
@@ -129,30 +166,7 @@ document.querySelector('.container').addEventListener('click', (e) => {
     UI.removeBookfromLibrary(e.target);
 })
 
-// Cleaned code, but why is null showing for .addEventListener for book status button?
-
-// GLOBAL SCOPE
-
-// '#' is the id selector
-// '.' is the class selector
-// let myLibrary = [];
-
-// Book Menu Sidebar
-const bookMenu = document.querySelector("aside");
-const menuBtn = document.querySelector('#book-menu-open');
-const closeBtn = document.querySelector('#book-menu-close');
-
-menuBtn.addEventListener('click', () => {
-    bookMenu.style.display = 'block';
-    menuBtn.style.display = 'none';
+// Event: Change Has Read Status
+document.querySelector('.container').addEventListener('click', (e) => {
+    console.log(e.target);
 })
-
-closeBtn.addEventListener('click', () => {
-    bookMenu.style.display = 'none';
-    menuBtn.style.display = 'block';
-})
-
-// Event: Change Book Status
-// bookStatus.addEventListener('click', () => {
-//     UI.changeBookStatus();
-// })

@@ -81,6 +81,8 @@ class UI {
     //     }
     // }
 
+    
+
     static clearFields() {
         document.querySelector('#name').value = '';
         document.querySelector('#author').value = '';
@@ -115,6 +117,15 @@ class UI {
 const bookMenu = document.querySelector("aside");
 const menuBtn = document.querySelector('#book-menu-open');
 const closeBtn = document.querySelector('#book-menu-close');
+
+// const book = new Book();
+
+// Book Prototype
+// Adding the function changeBookStatus to all Book objects
+
+Book.prototype.readStatus = function(element) {
+    console.log(element.target);
+};
 
 // Event: Open up Add Book Menu
 menuBtn.addEventListener('click', () => {
@@ -168,5 +179,6 @@ document.querySelector('.container').addEventListener('click', (e) => {
 
 // Event: Change Has Read Status
 document.querySelector('.container').addEventListener('click', (e) => {
-    console.log(e.target);
+    // console.log(e.target);
+    Book.prototype.readStatus(e);
 })

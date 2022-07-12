@@ -82,17 +82,6 @@ class UI {
     //     }
     // }
 
-    // document.querySelector('.container').addEventListener('click', (e) => {
-    //     let readStatus = e.target;
-    //     const hasRead = 'Has Read';
-
-    //     if(readStatus.textContent.toLowerCase().includes(hasRead.toLowerCase())) {
-    //         readStatus.innerHTML = 'Not Read';
-    //     } else {
-    //         readStatus.textContent = hasRead;
-    //     }
-    // })
-
     static clearFields() {
         document.querySelector('#name').value = '';
         document.querySelector('#author').value = '';
@@ -129,13 +118,6 @@ const menuBtn = document.querySelector('#book-menu-open');
 const closeBtn = document.querySelector('#book-menu-close');
 const readStatus = document.querySelector('.book-status');
 
-// Book Prototype
-// Adding the function changeBookStatus to all Book objects
-
-// Book.prototype.readStatus = function(element) {
-//     console.log(element.target);
-// };
-
 // Event: Open up Add Book Menu
 menuBtn.addEventListener('click', () => {
     bookMenu.style.display = 'block';
@@ -147,11 +129,6 @@ closeBtn.addEventListener('click', () => {
     bookMenu.style.display = 'none';
     menuBtn.style.display = 'block';
 })
-
-// Event: Change Book Status
-// bookStatus.addEventListener('click', () => {
-//     UI.changeBookStatus();
-// })
 
 // Event: Display Books
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
@@ -187,12 +164,6 @@ document.querySelector('.container').addEventListener('click', (e) => {
 })
 
 // Event: Change Has Read Status
-// Error: When 'container' is clicked the whole content turns into Not Read...
-// document.querySelector('.container').addEventListener('click', (e) => {
-//     // console.log(e.target);
-//     UI.changeBookStatus(e.target);
-// })
-
 document.addEventListener('click', (e) => {
     let readStatus = e.target;
     const hasRead = 'Has Read';

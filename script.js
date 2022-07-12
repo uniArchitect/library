@@ -50,10 +50,15 @@ class UI {
         // Add class book-card to created div element
         bookCard.classList.add('book-card');
         bookStatus.classList.add('book-status');
-        cardClose.classList.add('card-close');
+        // cardClose.classList.add('card-close');
         
         // Should be a button that toggles off between 'Has Read' and 'Not Read'
         bookCard.innerHTML = `
+        <button class="card-close">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+            </svg>
+        </button>
         <h3>${Book.name}</h3>
         <p>${Book.author}</p>
         <p>${Book.pages} pages</p>
@@ -64,13 +69,13 @@ class UI {
         `;
 
         // Close Card Icon
-        cardClose.innerHTML = 'Close';
+        // cardClose.innerHTML = '<h3>X</h3>';
 
         list.appendChild(bookCard);
         // Added button status for 'Has Read' and 'Not Read' on book card
         bookCard.appendChild(bookStatus);
         // Added button to delete book card
-        bookCard.appendChild(cardClose);
+        // bookCard.appendChild(cardClose);
     }
 
     // Change book status - In progress 220710

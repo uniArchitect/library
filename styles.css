@@ -29,7 +29,7 @@ body, html {
         #book-menu-open {
             position: absolute;
             top: 2%;
-            right: 5%;
+            right: 2%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -61,9 +61,66 @@ body, html {
                 border-radius: 10px;
                 padding: 25px;
                 gap: 10px;
-                background-color: #E8DDCB;
-                box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 4px;
+                background-color: #f0f0f0;
+                box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);;
             }
+
+                label {
+                    font-size: small;
+                    font-weight: bold;
+                }
+                
+                input, select {
+                    font-family: 'Montserrat', sans-serif;
+                    /* margin-bottom: 15px; */
+                    padding: 5px;
+                    height: 20px;
+                    width: 250px;
+                    border-radius: 5px;
+                    border: 1px solid;
+                    border-color: #d3d3d3;
+                    transition: .3s;
+                }
+
+                    select {
+                        height: 35px;
+                        width: 262px;
+                        border-color: #d3d3d3;
+                        background-color: white;
+                    }
+
+                    #book-submit, #book-menu-close {
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: bold;
+                        padding: 10px;
+                        border-radius: 10px;
+                        border: none;
+                        box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 4px;
+                        transition: .3s;
+                        width: 262px;
+                        height: 35px;    
+                    }
+
+                        #book-submit:hover, #book-menu-close:hover {
+                            transition: .3s;
+                            background-color: #036564;
+                            color: white;
+                        }
+                
+                input:hover {
+                    transition: .3s;
+                    border-color: #aaa;
+                }
+                
+                input:focus {
+                    outline: none;
+                    border: 1px solid black;
+                }
+
+                li {
+                    display: flex;
+                    flex-direction: column;
+                }
 
             .book-card {
                 display: flex;
@@ -97,13 +154,15 @@ body, html {
                 }
 
                     .book-status:hover {
-
+                        transition: .3s;
+                        background-color: #036564;
+                        color: white;
                     }
 
                 .card-close {
                     position: relative;
                     left: 45%;
-                    bottom: 7%;
+                    bottom: 17%;
                     height: 30px;
                     width: 30px;
                     border-radius: 50%;

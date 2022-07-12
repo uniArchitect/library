@@ -11,9 +11,9 @@ body, html {
     .container {
         height: 100%;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        gap: 5px;        
+        grid-template-columns: repeat(4, minmax(300px, 300px));
+        grid-template-rows: repeat(4, minmax(300px, 300px));
+        gap: 10px;        
     }
 
         /* Button to add a book to the library */
@@ -55,11 +55,13 @@ body, html {
                 justify-content: center;
                 align-items: center;
                 border-radius: 10px;
+                margin: 5px;
                 padding: 10px;
                 background-color: gainsboro;
                 text-decoration: none;
                 gap: 5px;
             }
+
     .container-popup {
         height: 100%;
     }

@@ -7,7 +7,7 @@ class Book {
         this.pages = pages;
         this.hasRead = hasRead;
         this.info = function() {
-            return this.name + ', ' + this.author + ', ' + this.pages + ', Has read? ' + this.hasRead;
+            return this.name + ', ' + this.author + ', ' + this.pages + ', ' + this.hasRead;
         }
     }
 }
@@ -54,9 +54,9 @@ class UI {
         
         // Should be a button that toggles off between 'Has Read' and 'Not Read'
         bookCard.innerHTML = `
-        <p>Name: ${Book.name}</p>
-        <p>Author: ${Book.author}</p>
-        <p>Page Count: ${Book.pages}</p>
+        <h3>${Book.name}</h3>
+        <p>${Book.author}</p>
+        <p>${Book.pages} pages</p>
         `;
 
         bookStatus.innerHTML = `
@@ -105,8 +105,6 @@ class UI {
 
 // Store Class - Handles storage (Important for later)
 
-// Cleaned code, but why is null showing for .addEventListener for book status button?
-
 // GLOBAL SCOPE
 
 // '#' is the id selector
@@ -116,7 +114,6 @@ class UI {
 const bookMenu = document.querySelector("aside");
 const menuBtn = document.querySelector('#book-menu-open');
 const closeBtn = document.querySelector('#book-menu-close');
-const readStatus = document.querySelector('.book-status');
 
 // Event: Open up Add Book Menu
 menuBtn.addEventListener('click', () => {
@@ -168,6 +165,7 @@ document.addEventListener('click', (e) => {
     let readStatus = e.target;
     const hasRead = 'Has Read';
 
+    // Specify if statement to target elements with class 'book-status'
     if(readStatus.textContent.toLowerCase().includes(hasRead.toLowerCase()) && readStatus.classList.contains('book-status')) {
         readStatus.innerHTML = 'Not Read';
     } else if(readStatus.classList.contains('book-status')){

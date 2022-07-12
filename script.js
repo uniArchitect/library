@@ -74,13 +74,13 @@ class UI {
     }
 
     // Change book status - In progress 220710
-    static changeBookStatus(element) {
-        if(element.classList.contains('book-status') && (element.innerHTML = 'Has Read')) {
-            element.innerHTML = 'Not Read';
-        } else if (element.classList.contains('book-status') && (element.innerHTML = 'Not Read')) {
-            element.innerHTML = 'Has Read';
-        }
-    }
+    // static changeBookStatus(element) {
+    //     if(element.classList.contains('book-status') && (element.innerHTML = 'Has Read')) {
+    //         element.innerHTML = 'Not Read';
+    //     } else if (element.classList.contains('book-status') && (element.innerHTML = 'Not Read')) {
+    //         element.innerHTML = 'Has Read';
+    //     }
+    // }
 
     // document.querySelector('.container').addEventListener('click', (e) => {
     //     let readStatus = e.target;
@@ -188,18 +188,18 @@ document.querySelector('.container').addEventListener('click', (e) => {
 
 // Event: Change Has Read Status
 // Error: When 'container' is clicked the whole content turns into Not Read...
-document.querySelector('.container').addEventListener('click', (e) => {
-    // console.log(e.target);
-    UI.changeBookStatus(e.target);
-})
-
 // document.querySelector('.container').addEventListener('click', (e) => {
-//     let readStatus = e.target;
-//     const hasRead = 'Has Read';
-
-//     if(readStatus.textContent.toLowerCase().includes(hasRead.toLowerCase())) {
-//         readStatus.innerHTML = 'Not Read';
-//     } else {
-//         readStatus.textContent = hasRead;
-//     }
+//     // console.log(e.target);
+//     UI.changeBookStatus(e.target);
 // })
+
+document.addEventListener('click', (e) => {
+    let readStatus = e.target;
+    const hasRead = 'Has Read';
+
+    if(readStatus.textContent.toLowerCase().includes(hasRead.toLowerCase()) && readStatus.classList.contains('book-status')) {
+        readStatus.innerHTML = 'Not Read';
+    } else if(readStatus.classList.contains('book-status')){
+        readStatus.textContent = hasRead;
+    }
+})
